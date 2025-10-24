@@ -1,0 +1,21 @@
+{
+  "name": "creator-platform",
+  "version": "1.0.0",
+  "description": "A platform for permanent, paid emotes on Twitch.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "twitch",
+    "x402",
+    "arweave",
+    "crypto"
+  ],
+  "author": "Jules",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "x402-express": "^0.6.5"
+  }
+}
