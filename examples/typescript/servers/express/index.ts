@@ -24,6 +24,13 @@ app.use(
         // network: "solana" // uncomment for Solana mainnet
         network: "base-sepolia",
       },
+      "GET /forecast": {
+        // USDC amount in dollars
+        price: "$0.002",
+        // network: "base" // uncomment for Base mainnet
+        // network: "solana" // uncomment for Solana mainnet
+        network: "base-sepolia",
+      },
       "/premium/*": {
         // Define atomic amounts in any EIP-3009 token
         price: {
@@ -54,6 +61,15 @@ app.get("/weather", (req, res) => {
     report: {
       weather: "sunny",
       temperature: 70,
+    },
+  });
+});
+
+app.get("/forecast", (req, res) => {
+  res.send({
+    report: {
+      weather: "cloudy",
+      temperature: 65,
     },
   });
 });

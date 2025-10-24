@@ -33,11 +33,19 @@ async function main(): Promise<void> {
     signer,
   );
 
-  const response = await api.get(endpointPath);
-  console.log(response.data);
+  console.log("Requesting /weather endpoint...");
+  const weatherResponse = await api.get("/weather");
+  console.log(weatherResponse.data);
 
-  const paymentResponse = decodeXPaymentResponse(response.headers["x-payment-response"]);
-  console.log(paymentResponse);
+  const weatherPaymentResponse = decodeXPaymentResponse(weatherResponse.headers["x-payment-response"]);
+  console.log(weatherPaymentResponse);
+
+  console.log("\nRequesting /forecast endpoint...");
+  const forecastResponse = await api.get("/forecast");
+  console.log(forecastResponse.data);
+
+  const forecastPaymentResponse = decodeXPaymentResponse(forecastResponse.headers["x-payment-response"]);
+  console.log(forecastPaymentResponse);
 }
 
 main();
