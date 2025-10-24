@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Permanent Creator Platform",
+  "version": "0.1.0",
+  "description": "Adds permanent, paid emotes to Twitch.",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}
